@@ -1,0 +1,7 @@
+package com.example.cash.auth;
+
+import com.fasterxml.jackson.core.JsonTokenId;
+
+public class Test implements JsonTokenId {
+
+}

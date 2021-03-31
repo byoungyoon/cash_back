@@ -1,0 +1,5 @@
+package com.example.cash.auth;
+
+public class WebSecurityConfig {
+
+}
