@@ -10,14 +10,18 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
+import com.example.cash.vo.User;
+
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import lombok.extern.slf4j.Slf4j;
 
 @Component
+@Slf4j
 public class JwtTokenUtil implements Serializable {
     private static final long serialVersionUID = -2550185165626007488L;
-    public static final long JWT_TOKEN_VALIDITY = 5 * 60 * 60;
+    public static final long JWT_TOKEN_VALIDITY = 30 * 60 * 60;
     @Value("${jwt.secret}")
     private String secret;
 
@@ -50,7 +54,9 @@ public class JwtTokenUtil implements Serializable {
     //generate token for user
     public String generateToken(UserDetails userDetails) {
         Map<String, Object> claims = new HashMap<>();
-        return doGenerateToken(claims, userDetails.getUsername());
+        User user = (User)userDetails;
+        log.info("{}", "###################" + user);
+        return doGenerateToken(claims, user.getUserId());
     }
 
     //while creating the token -
@@ -60,14 +66,15 @@ public class JwtTokenUtil implements Serializable {
 //   compaction of the JWT to a URL-safe string
     private String doGenerateToken(Map<String, Object> claims, String subject) {
         return Jwts.builder().setClaims(claims).setSubject(subject).setIssuedAt(new Date(System.currentTimeMillis()))
-            //.setExpiration(new Date(System.currentTimeMillis() + JWT_TOKEN_VALIDITY * 1000))
-            .setExpiration(new Date(System.currentTimeMillis() + 5 * 1000))
+            .setExpiration(new Date(System.currentTimeMillis() + JWT_TOKEN_VALIDITY * 1000))
+            //.setExpiration(new Date(System.currentTimeMillis() + 5 * 1000))
             .signWith(SignatureAlgorithm.HS512, secret).compact();
     }
 
     //validate token
     public Boolean validateToken(String token, UserDetails userDetails) {
         final String username = getUsernameFromToken(token);
-        return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
+        User user = (User)userDetails;
+        return (username.equals(user.getUserId()) && !isTokenExpired(token));
     }
 }

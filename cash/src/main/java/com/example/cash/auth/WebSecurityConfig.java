@@ -36,11 +36,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
     @Override
     protected void configure(HttpSecurity http) throws Exception {
     	http.csrf().disable()
-    		.authorizeRequests().antMatchers("/authenticate").permitAll()
+    		.authorizeRequests().antMatchers("/login").permitAll()
+    		.antMatchers("/user/**").hasAnyRole("USER", "ADMIN")
+    		.antMatchers("/admin/**").hasRole("ADMIN")
     		.anyRequest().authenticated()
     		.and();
     	http.cors().configurationSource(request-> new CorsConfiguration().applyPermitDefaultValues());
-    	http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+    	http.exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint)
+    		.and()
+    		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     	http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
  
     }
