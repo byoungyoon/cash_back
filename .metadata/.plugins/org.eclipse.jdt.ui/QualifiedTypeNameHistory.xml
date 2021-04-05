@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.apache.ibatis.javassist.SerialVersionUID"/>
-    <fullyQualifiedTypeName name="lombok.Value"/>
-    <fullyQualifiedTypeName name="org.springframework.security.web.AuthenticationEntryPoint"/>
     <fullyQualifiedTypeName name="org.apache.ibatis.annotations.Mapper"/>
     <fullyQualifiedTypeName name="lombok.Data"/>
-    <fullyQualifiedTypeName name="com.example.cash.mapper.UserMapper"/>
-    <fullyQualifiedTypeName name="com.example.cash.vo.User"/>
     <fullyQualifiedTypeName name="org.springframework.security.core.userdetails.UsernameNotFoundException"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Value"/>
     <fullyQualifiedTypeName name="io.jsonwebtoken.Claims"/>
@@ -34,19 +29,14 @@
     <fullyQualifiedTypeName name="com.example.cash.auth.JwtTokenUtil"/>
     <fullyQualifiedTypeName name="io.jsonwebtoken.ExpiredJwtException"/>
     <fullyQualifiedTypeName name="org.springframework.security.core.context.SecurityContextHolder"/>
-    <fullyQualifiedTypeName name="org.springframework.security.core.userdetails.UserDetails"/>
     <fullyQualifiedTypeName name="org.springframework.security.web.authentication.WebAuthenticationDetailsSource"/>
     <fullyQualifiedTypeName name="com.sun.tools.javac.jvm.Code.Chain"/>
     <fullyQualifiedTypeName name="com.sun.net.httpserver.Filter.Chain"/>
     <fullyQualifiedTypeName name="javax.servlet.FilterChain"/>
     <fullyQualifiedTypeName name="org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter"/>
     <fullyQualifiedTypeName name="com.example.cash.auth.JwtAuthenticationEntryPoint"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
-    <fullyQualifiedTypeName name="org.springframework.security.core.userdetails.UserDetailsService"/>
     <fullyQualifiedTypeName name="org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder"/>
     <fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
-    <fullyQualifiedTypeName name="org.springframework.security.crypto.password.PasswordEncoder"/>
-    <fullyQualifiedTypeName name="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
     <fullyQualifiedTypeName name="org.springframework.security.authentication.AuthenticationManager"/>
     <fullyQualifiedTypeName name="org.springframework.security.config.annotation.web.builders.HttpSecurity"/>
     <fullyQualifiedTypeName name="org.springframework.web.cors.CorsConfiguration"/>
@@ -57,6 +47,17 @@
     <fullyQualifiedTypeName name="org.springframework.security.authentication.UsernamePasswordAuthenticationToken"/>
     <fullyQualifiedTypeName name="org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
-    <fullyQualifiedTypeName name="lombok.extern.slf4j.Slf4j"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
+    <fullyQualifiedTypeName name="org.springframework.security.crypto.password.PasswordEncoder"/>
+    <fullyQualifiedTypeName name="org.springframework.security.core.userdetails.UserDetailsService"/>
+    <fullyQualifiedTypeName name="org.springframework.security.core.userdetails.UserDetails"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="com.example.cash.mapper.UserMapper"/>
+    <fullyQualifiedTypeName name="java.util.Collection"/>
+    <fullyQualifiedTypeName name="com.sun.tools.javac.util.List"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+    <fullyQualifiedTypeName name="java.lang.SuppressWarnings"/>
+    <fullyQualifiedTypeName name="lombok.extern.slf4j.Slf4j"/>
+    <fullyQualifiedTypeName name="com.example.cash.vo.User"/>
 </qualifiedTypeNameHistroy>

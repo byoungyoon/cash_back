@@ -1,0 +1,28 @@
+package com.example.cash.restcontroller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.cash.service.NoticeService;
+import com.example.cash.vo.Notice;
+
+@RestController
+public class NoticeRestController {
+	@Autowired NoticeService noticeService;
+	
+	@GetMapping("/getNotice")
+	public List<List<String>> getNotice(){
+		for(int i=0;i<noticeService.getNotice().size(); i++) {
+			List<String> list = new ArrayList<>();
+			for(int j=0; j<4; j++) {
+				list.add(noticeService.getNotice().get(i).toString());
+			}
+		}
+		
+		return null;
+	}
+}
