@@ -14,7 +14,7 @@ import com.example.cash.vo.Notice;
 public class NoticeService {
 	@Autowired NoticeMapper noticeMapper;
 	
-	public List<Notice> getNotice(int noticeNo){
-		return noticeMapper.selectNotice(noticeNo);
+	public List<Notice> getNotice(){
+		return noticeMapper.selectNotice();
 	}
 }

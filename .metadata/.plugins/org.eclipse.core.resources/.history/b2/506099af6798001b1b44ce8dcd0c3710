@@ -17,6 +17,6 @@ public class NoticeRestController {
 	@GetMapping("/getNotice")
 	public List<Notice> getNotice(
 			@RequestParam(value="noticeNo", required = false) int noticeNo){
-		return noticeService.getNotice(noticeNo);
+		return noticeService.getNotice();
 	}
 }

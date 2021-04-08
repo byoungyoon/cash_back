@@ -8,5 +8,5 @@ import com.example.cash.vo.Notice;
 
 @Mapper
 public interface NoticeMapper {
-	List<Notice> selectNotice(int noticeNo);
+	List<Notice> selectNotice();
 }

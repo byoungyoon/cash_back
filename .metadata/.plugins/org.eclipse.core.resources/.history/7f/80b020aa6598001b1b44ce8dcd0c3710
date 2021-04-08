@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.cash.mapper.NoticeMapper">
-	<select id="selectNotice" parameterType="int" resultType="com.example.cash.vo.Notice">
+	<select id="selectNotice" resultType="com.example.cash.vo.Notice">
 		SELECT 
 			notice_no noticeNo,
 			notice_title noticeTitle,
@@ -11,7 +11,6 @@
 			create_date createDate,
 			last_update lastUpdate
 		FROM cash.notice
-		WHERE notice_no > #{noticeNo}
 		LIMIT 10 OFFSET 0
 	</select>
 </mapper>
