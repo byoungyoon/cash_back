@@ -13,7 +13,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.example.cash.auth.JwtTokenUtil;
 import com.example.cash.mapper.UserMapper;
+import com.example.cash.vo.Account;
 import com.example.cash.vo.User;
 
 import lombok.extern.slf4j.Slf4j;
@@ -22,6 +24,19 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class JwtUserDetailsService implements UserDetailsService {
 	@Autowired UserMapper userMapper;
+	@Autowired JwtTokenUtil jwtTokenUtil;
+	
+	public User getOneUser(String token) {
+		token = token.substring(7);
+		String userId = null;
+		try {
+			userId = jwtTokenUtil.getUsernameFromToken(token);
+		} catch (IllegalArgumentException e) {
+			log.warn("{}", "Unable to get JWT Token");
+		}
+		
+		return userMapper.selectOneUser(userId);
+	}
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -49,9 +64,12 @@ public class JwtUserDetailsService implements UserDetailsService {
     public User getUserByLogin(String userId) {
     	return userMapper.selectUserByLogin(userId);
     }
-	
+    
 	public void signup(User user) {
 		userMapper.insertUser(user);
+		Account account = new Account();
+		account.setUserId(user.getUserId());
+		userMapper.insertAccout(account);
 	}
 
 }

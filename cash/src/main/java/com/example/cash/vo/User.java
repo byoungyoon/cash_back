@@ -19,6 +19,8 @@ public class User implements UserDetails{
 	private String createDate;
 	private String lastUpdate;
 	private String userAuth;
+	private String userInfo;
+	private String userImg;
 	private Collection<? extends GrantedAuthority> authorities;
 	
 	@Override
