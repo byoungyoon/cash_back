@@ -19,7 +19,7 @@ public class InfoRestController {
 	@Autowired JwtUserDetailsService userService;
 	
 	@PostMapping("/user/modifyUser")
-	public String modifyUser(User user,
+	public String modifyUser(@RequestPart(value="user", required = false) User user,
 			@RequestHeader(value = "Authorization", required = false) String token) {
 		userService.modifyUser(user, token);
 		return "";

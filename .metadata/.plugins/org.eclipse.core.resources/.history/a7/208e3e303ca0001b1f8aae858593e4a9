@@ -12,6 +12,7 @@
 			user_info = #{userInfo},
 			user_img = #{userImg}
 		WHERE user_id = #{userId}
+			
 	</update>
 	<select id="selectOneUser" parameterType="String" resultType="com.example.cash.vo.User">
 		SELECT user_name "name", user_gender userGender, user_phone userPhone, user_info userInfo, user_img userImg

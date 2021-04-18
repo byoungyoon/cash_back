@@ -7,7 +7,6 @@ import com.example.cash.vo.User;
 
 @Mapper
 public interface UserMapper {
-	int updateUser(User user);
 	User selectOneUser(String userId);
 	User selectUserByLogin(String userId);
 	int insertAccout(Account accout);

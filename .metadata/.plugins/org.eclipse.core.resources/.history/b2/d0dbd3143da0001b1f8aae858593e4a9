@@ -27,16 +27,6 @@ public class JwtUserDetailsService implements UserDetailsService {
 	@Autowired JwtTokenUtil jwtTokenUtil;
 	
 	public void modifyUser(User user, String token) {
-		token = token.substring(7);
-		String userId = null;
-		try {
-			userId = jwtTokenUtil.getUsernameFromToken(token);
-		} catch (IllegalArgumentException e) {
-			log.warn("{}", "Unable to get JWT Token");
-		}
-		
-		user.setUserId(userId);
-		log.info("{}", "###############" + user);
 		userMapper.updateUser(user);
 	}
 	
