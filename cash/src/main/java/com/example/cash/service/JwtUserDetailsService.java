@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 import com.example.cash.auth.JwtTokenUtil;
 import com.example.cash.mapper.UserMapper;
 import com.example.cash.vo.Account;
+import com.example.cash.vo.Notice;
 import com.example.cash.vo.User;
 
 import lombok.extern.slf4j.Slf4j;
