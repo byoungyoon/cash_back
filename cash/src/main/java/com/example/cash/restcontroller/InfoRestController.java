@@ -1,18 +1,16 @@
 package com.example.cash.restcontroller;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.cash.service.CashbookService;
 import com.example.cash.service.JwtUserDetailsService;
-import com.example.cash.vo.Cashbook;
 import com.example.cash.vo.User;
 
 import lombok.extern.slf4j.Slf4j;
@@ -23,11 +21,6 @@ public class InfoRestController {
 	@Autowired JwtUserDetailsService userService;
 	@Autowired CashbookService cashbookService;
 	
-	@PostMapping("/user/getIncomeChart")
-	public List<Cashbook> getIncomeChart(Cashbook cashbook){
-		return cashbookService.getIncomeChart(cashbook);
-	}
-	
 	@PostMapping("/user/modifyUser")
 	public String modifyUser(User user,
 			@RequestHeader(value = "Authorization", required = false) String token) {
@@ -36,9 +29,13 @@ public class InfoRestController {
 	}
 	
 	@GetMapping("/user/getInfo")
-	public User getInfo(
+	public Map<String, Object> getInfo(
 			@RequestHeader(value = "Authorization", required = false) String token) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("user", userService.getOneUser(token));
+		map.put("incomeChart", cashbookService.getIncomeChart(token).get("incomeList"));
+		map.put("outcomeChart", cashbookService.getIncomeChart(token).get("outcomeList"));
 		
-		return userService.getOneUser(token);
+		return map;
 	}
 }

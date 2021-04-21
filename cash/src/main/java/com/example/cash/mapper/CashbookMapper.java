@@ -8,5 +8,6 @@ import com.example.cash.vo.Cashbook;
 
 @Mapper
 public interface CashbookMapper {
-	List<Cashbook> selectIncomeChart(Cashbook cashbook);
+	List<Cashbook> selectOutcomeChart(String userId);
+	List<Cashbook> selectIncomeChart(String userId);
 }

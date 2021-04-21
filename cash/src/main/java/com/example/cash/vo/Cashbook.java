@@ -8,7 +8,8 @@ public class Cashbook {
 	private String userId;
 	private String cashbookInfo;
 	private String cashbookTitle;
-	private float cashbookPrice;
+	private int cashbookPrice;
+	private int cashbookMonth;
 	private String cashbookContent;
 	private String cashbookDate;
 	private String createDate;

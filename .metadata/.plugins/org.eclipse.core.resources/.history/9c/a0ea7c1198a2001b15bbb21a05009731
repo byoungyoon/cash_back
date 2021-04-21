@@ -1,0 +1,53 @@
+package com.example.cash.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.example.cash.auth.JwtTokenUtil;
+import com.example.cash.mapper.CashbookMapper;
+import com.example.cash.vo.Cashbook;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Service
+@Transactional
+@Slf4j
+public class CashbookService {
+	@Autowired CashbookMapper cashbookMapper;
+	@Autowired JwtTokenUtil jwtTokenUtil;
+	
+	public List<Cashbook> getIncomeChart(String token){
+		token = token.substring(7);
+		String userId = null;
+		try {
+			userId = jwtTokenUtil.getUsernameFromToken(token);
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		}
+		
+		List<Cashbook> list = cashbookMapper.selectIncomeChart(userId);
+		List<Integer> priceList = new ArrayList<>();
+		boolean check = false;
+		for(int i=1; i<13; i++) {
+			for(int j=0; j<list.size(); j++) {
+				if(list.get(j).getCashbookMonth() == i) {
+					check = true;
+					priceList.add(list.get(j).getCashbookPrice());
+					break;
+				}
+			}
+			if(!check) {
+				priceList.add(0);
+			}
+			check = false;
+		}
+		
+		log.info("{}", "#########" + priceList);
+		
+		return priceList;
+	}
+}
