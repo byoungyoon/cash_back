@@ -1,0 +1,12 @@
+package com.example.cash.restcontroller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.cash.service.CashbookService;
+
+@RestController
+public class CashbookRestController {
+	@Autowired CashbookService cashbookService;
+	
+}

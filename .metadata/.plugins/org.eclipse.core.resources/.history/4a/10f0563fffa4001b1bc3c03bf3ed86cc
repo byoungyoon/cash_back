@@ -1,0 +1,15 @@
+package com.example.cash.mapper;
+
+import java.util.List;
+import java.util.Map;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import com.example.cash.vo.Cashbook;
+
+@Mapper
+public interface CashbookMapper {
+	List<Cashbook> selectCashbookByMonth(Cashbook cashbook);
+	List<Cashbook> selectOutcomeChart(String userId);
+	List<Cashbook> selectIncomeChart(String userId);
+}

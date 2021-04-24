@@ -22,6 +22,26 @@ public class CashbookService {
 	@Autowired CashbookMapper cashbookMapper;
 	@Autowired JwtTokenUtil jwtTokenUtil;
 	
+	public List<Cashbook> getCashbookByMonth(String cashbookDate, String token){
+		String[] current = cashbookDate.split("-");
+		token = token.substring(7);
+		String userId = null;
+		try {
+			userId = jwtTokenUtil.getUsernameFromToken(token);
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		}
+		
+		Map<String, Object> map = new HashMap<>();
+		map.put("currentYear", Integer.valueOf(current[0]));
+		map.put("currentMonth", Integer.valueOf(current[1]));
+		map.put("userId", userId);
+		
+		log.info("{}", "##########" + map);
+		
+		return cashbookMapper.selectCashbookByMonth(map);
+	}
+	
 	public Map<String, List<Integer>> getIncomeChart(String token){
 		token = token.substring(7);
 		String userId = null;
