@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.function.Function;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
@@ -24,6 +25,17 @@ public class JwtTokenUtil implements Serializable {
     public static final long JWT_TOKEN_VALIDITY = 30 * 60 * 60;
     @Value("${jwt.secret}")
     private String secret;
+    
+    public String getToken(String token) {
+    	token = token.substring(7);
+    	String userId = null;
+    	try {
+    		userId = getUsernameFromToken(token);
+    	} catch(IllegalArgumentException e) {
+    		e.printStackTrace();
+    	}
+    	return userId;
+    }
 
     //retrieve username from jwt token
     public String getUsernameFromToken(String token) {

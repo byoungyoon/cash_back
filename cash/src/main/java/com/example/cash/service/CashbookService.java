@@ -1,6 +1,7 @@
 package com.example.cash.service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,6 +23,21 @@ public class CashbookService {
 	@Autowired CashbookMapper cashbookMapper;
 	@Autowired JwtTokenUtil jwtTokenUtil;
 	
+	public List<Cashbook> getCashbookDetail(String currentDay, String token) {
+		String userId = jwtTokenUtil.getToken(token);
+		int[] value = Arrays.stream(currentDay.split("-")).mapToInt(Integer::parseInt).toArray();
+		
+		Map<String, Object> map = new HashMap<>();
+		map.put("userId", userId);
+		map.put("year", value[0]);
+		map.put("month", value[1]);
+		map.put("day", value[2]);
+		
+		log.info("{}","######################################" + map);
+		
+		return cashbookMapper.selectCashbookDetail(map);
+	}
+	
 	public List<Cashbook> getCashbookByMonth(String cashbookDate, String token){
 		String[] current = cashbookDate.split("-");
 		token = token.substring(7);
@@ -37,7 +53,7 @@ public class CashbookService {
 		map.put("currentMonth", Integer.valueOf(current[1]));
 		map.put("userId", userId);
 		
-		log.info("{}", "##########" + map);
+		//log.info("{}", "##########" + map);
 		
 		return cashbookMapper.selectCashbookByMonth(map);
 	}

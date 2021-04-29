@@ -18,6 +18,13 @@ import lombok.extern.slf4j.Slf4j;
 public class CashbookRestController {
 	@Autowired CashbookService cashbookService;
 	
+	@GetMapping("/user/getCashbookDetail")
+	public List<Cashbook> getCashbookDetail(
+			@RequestParam(value="currentDay", required = false) String currentDay,
+			@RequestHeader(value="Authorization", required = false) String token){
+		return cashbookService.getCashbookDetail(currentDay, token);
+	}
+	
 	@GetMapping("/user/getCashbook")
 	public List<Cashbook> getCashbookByMonth(
 			@RequestParam(value="currentMonth", required = false) String currentMonth,
