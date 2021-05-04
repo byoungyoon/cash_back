@@ -3,9 +3,9 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.cash.mapper.CashbookMapper">
-	<select id="selectCashbookDetail" parameterType="java.util.Map" resultType="com.example.cash.vo.Cashbook">
+	<select id="selectCashbookDetail" parameterType="java.util.Map" resultType="com.example.cash.vo.CashbookDetail">
 		select 
-			cashbook_no cashbookNo,
+			cashbook_no id,
 			cashbook_info cashbookInfo, 
 			cashbook_title cashbookTitle, 
 			cashbook_price cashbookPrice, 
