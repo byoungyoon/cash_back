@@ -1,0 +1,40 @@
+package com.example.cash.service;
+
+import java.io.File;
+import java.util.UUID;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.example.cash.auth.JwtTokenUtil;
+import com.example.cash.mapper.GuestBookMapper;
+import com.example.cash.vo.GuestBook;
+
+@Service
+@Transactional
+public class GuestBookService {
+	@Autowired GuestBookMapper guestBookMapper;
+	@Autowired JwtTokenUtil jwtTokenUtil;
+	
+	public void addGusetBook(GuestBook guestBook, String token) {
+		String userId = jwtTokenUtil.getToken(token);
+		guestBook.setUserId(userId);
+		
+		int p = guestBook.getGuestbookImgFile().getOriginalFilename().lastIndexOf(".");
+		String ext = guestBook.getGuestbookImgFile().getOriginalFilename().substring(p).toLowerCase();
+		String fileName = UUID.randomUUID().toString().replace("-", "");
+		guestBook.setGuestbookImg(fileName + ext);
+		
+		File file = new File("file:///C://Users//bur56//images//" + fileName + ext);
+		
+		try {
+			guestBook.getGuestbookImgFile().transferTo(file);
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new RuntimeException();
+		}
+		
+		guestBookMapper.insertGusetBook(guestBook);
+	}
+}

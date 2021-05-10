@@ -1,0 +1,18 @@
+package com.example.cash.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.example.cash.mapper.GuestBookMapper;
+import com.example.cash.vo.GuestBook;
+
+@Service
+@Transactional
+public class GuestBookService {
+	@Autowired GuestBookMapper guestBookMapper;
+	
+	public void addGusetBook(GuestBook guestBook, String token) {
+		
+	}
+}
