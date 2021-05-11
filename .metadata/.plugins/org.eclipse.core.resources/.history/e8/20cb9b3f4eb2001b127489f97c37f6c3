@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.cash.mapper.GuestBookMapper">
+	<select id="selectDetailGuestBook" parameterType="int" resultType="com.example.cash.vo.GuestBook">
+		select 
+			guestbook_no guestbookNo,
+			guestbook_title guestbookTitle,
+			user_id userId,
+			guestbook_content guestbookContent,
+			guestbook_count guestbookCount,
+			create_date createDate
+		from cash.guestbook
+	</select>
+	<insert id="insertGusetBook" parameterType="com.example.cash.vo.GuestBook">
+		insert into cash.guestbook(user_id,
+									guestbook_title,
+									guestbook_content,
+									guestbook_img,
+									guestbook_count,
+									create_date,
+									last_update)
+		values(#{userId}, 
+				#{guestbookTitle}, 
+				#{guestbookContent}, 
+				#{guestbookImg}, 
+				0, NOW(), NOW())
+	</insert>
+</mapper>

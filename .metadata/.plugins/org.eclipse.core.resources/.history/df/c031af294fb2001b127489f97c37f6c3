@@ -1,0 +1,11 @@
+package com.example.cash.mapper;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import com.example.cash.vo.GuestBook;
+
+@Mapper
+public interface GuestBookMapper {
+	GuestBook selectDetailGuestBook(int guestbookNo);
+	int insertGusetBook(GuestBook guestBook);
+}

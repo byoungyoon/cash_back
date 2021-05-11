@@ -1,6 +1,8 @@
 package com.example.cash.service;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,17 @@ import com.example.cash.vo.GuestBook;
 public class GuestBookService {
 	@Autowired GuestBookMapper guestBookMapper;
 	@Autowired JwtTokenUtil jwtTokenUtil;
+	
+	public GuestBook getDetailGuestBook(int guestbookNo) {
+		GuestBook guestBook = guestBookMapper.selectDetailGuestBook(guestbookNo);
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("guestbookNo", guestBook.getGuestbookNo());
+		map.put("guestbookCount", guestBook.getGuestbookCount());
+		guestBookMapper.updateCountGuestBook(map);
+		
+		return guestBook;
+	}
 	
 	public void addGusetBook(GuestBook guestBook, String token) {
 		String userId = jwtTokenUtil.getToken(token);
