@@ -3,15 +3,6 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.cash.mapper.GuestBookMapper">
-	<update id="updateGuestBook" parameterType="com.example.cash.vo.GuestBook">
-		update cash.guestbook
-		set guestbook_title = #{guestbookTitle}, guestbook_content = #{guestbookContent}
-		where guestbook_no = #{guestbookNo]
-	</update>
-	<delete id="deleteGuestBook" parameterType="int">
-		delete cash.guestbook
-		where guestbook_no = #{guestbookNo}	
-	</delete>
 	<update id="updateCountGuestBook" parameterType="java.util.Map">
 		update cash.guestbook
 		set guestbook_count = #{guestbookCount} + 1

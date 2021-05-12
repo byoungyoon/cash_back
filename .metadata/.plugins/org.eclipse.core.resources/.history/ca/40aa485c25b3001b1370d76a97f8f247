@@ -17,19 +17,6 @@ import lombok.extern.slf4j.Slf4j;
 public class GuestBookRestController {
 	@Autowired GuestBookService guestBookService;
 	
-	@PostMapping("/user/modifyGuestBook")
-	public String modifyGuestBook(GuestBook guestBook) {
-		guestBookService.modifyGuestBook(guestBook);
-		return "";
-	}
-	
-	@GetMapping("/user/removeGuestBook")
-	public String removeGuestBook(
-			@RequestParam(value="guestbookNo", required = false) int guestbookNo) {
-		guestBookService.removeGuestBook(guestbookNo);
-		return "";
-	}
-	
 	@GetMapping("/user/getDetailGuestBook")
 	public GuestBook getDetailGuestBook(
 			@RequestParam(value="guestbookNo", required = false) int guestbookNo) {

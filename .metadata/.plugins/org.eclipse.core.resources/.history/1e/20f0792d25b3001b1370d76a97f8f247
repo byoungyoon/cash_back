@@ -19,14 +19,6 @@ public class GuestBookService {
 	@Autowired GuestBookMapper guestBookMapper;
 	@Autowired JwtTokenUtil jwtTokenUtil;
 	
-	public void modifyGuestBook(GuestBook guestBook) {
-		guestBookMapper.updateGuestBook(guestBook);
-	}
-	
-	public void removeGuestBook(int guestbookNo) {
-		guestBookMapper.deleteGuestBook(guestbookNo);
-	}
-	
 	public GuestBook getDetailGuestBook(int guestbookNo) {
 		GuestBook guestBook = guestBookMapper.selectDetailGuestBook(guestbookNo);
 		
