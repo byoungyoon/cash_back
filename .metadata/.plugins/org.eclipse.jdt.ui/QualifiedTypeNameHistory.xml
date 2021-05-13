@@ -50,7 +50,6 @@
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="com.example.cash.service.GuestBookService"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
-    <fullyQualifiedTypeName name="com.example.cash.vo.GuestBook"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestHeader"/>
     <fullyQualifiedTypeName name="lombok.extern.slf4j.Slf4j"/>
     <fullyQualifiedTypeName name="org.springframework.web.multipart.MultipartFile"/>
@@ -60,4 +59,5 @@
     <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+    <fullyQualifiedTypeName name="com.example.cash.vo.GuestBook"/>
 </qualifiedTypeNameHistroy>

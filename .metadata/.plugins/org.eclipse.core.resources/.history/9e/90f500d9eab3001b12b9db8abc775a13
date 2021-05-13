@@ -19,7 +19,6 @@ public class GuestBookRestController {
 	
 	@PostMapping("/user/modifyGuestBook")
 	public String modifyGuestBook(GuestBook guestBook) {
-		log.info("{}", "##############" + guestBook);
 		guestBookService.modifyGuestBook(guestBook);
 		return "";
 	}

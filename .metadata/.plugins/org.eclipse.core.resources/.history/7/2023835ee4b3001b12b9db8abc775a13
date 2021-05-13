@@ -5,11 +5,11 @@
 <mapper namespace="com.example.cash.mapper.GuestBookMapper">
 	<update id="updateGuestBook" parameterType="com.example.cash.vo.GuestBook">
 		update cash.guestbook
-		set guestbook_title = #{guestbookTitle}, guestbook_content = #{guestbookContent}, last_update = NOW()
-		where guestbook_no = #{guestbookNo}
+		set guestbook_title = #{guestbookTitle}, guestbook_content = #{guestbookContent}
+		where guestbook_no = #{guestbookNo]
 	</update>
 	<delete id="deleteGuestBook" parameterType="int">
-		delete from cash.guestbook
+		delete cash.guestbook
 		where guestbook_no = #{guestbookNo}	
 	</delete>
 	<update id="updateCountGuestBook" parameterType="java.util.Map">

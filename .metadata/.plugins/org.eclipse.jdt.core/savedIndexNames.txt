@@ -10,7 +10,6 @@ INDEX VERSION 1.131+C:\Users\bur56\cash_back\.metadata\.plugins\org.eclipse.jdt.
 226215551.index
 3001001477.index
 3327420760.index
-473755506.index
 1969283279.index
 4125652796.index
 235459745.index

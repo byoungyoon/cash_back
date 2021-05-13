@@ -3227,3 +3227,31 @@
 2021-05-12 22:40:58,629 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2021-05-12 22:40:58,632 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2021-05-12 22:40:58,632 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-05-12 22:40:58,632 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\bur56\cash_back\cash\src\test\resources
+2021-05-13 20:45:59,657 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2021-05-13 21:11:42,100 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-13 21:11:42,202 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-05-13 21:11:42,209 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-13 21:11:42,331 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-13 21:11:42,340 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-13 21:11:42,340 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-05-13 21:11:42,340 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\bur56\cash_back\cash\src\test\resources
+2021-05-13 21:57:49,763 [Start Help Server] INFO  org.eclipse.jetty.util.log - Logging initialized @5327856ms to org.eclipse.jetty.util.log.Slf4jLog
+2021-05-13 21:57:50,168 [Start Help Server] INFO  org.eclipse.jetty.server.Server - jetty-9.4.31.v20200723; built: 2020-08-03T13:24:06.825Z; git: 450ba27947e13e66baa8cd1ce7e85a4461cacc1d; jvm 15+36-1562
+2021-05-13 21:57:50,196 [Start Help Server] INFO  org.eclipse.jetty.server.session - DefaultSessionIdManager workerName=node0
+2021-05-13 21:57:50,196 [Start Help Server] INFO  org.eclipse.jetty.server.session - No SessionScavenger set, using defaults
+2021-05-13 21:57:50,197 [Start Help Server] INFO  org.eclipse.jetty.server.session - node0 Scavenging every 600000ms
+2021-05-13 21:57:50,251 [Start Help Server] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@7d84f0ed{/help,null,AVAILABLE}
+2021-05-13 21:57:50,293 [Start Help Server] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@7eea9ea6{HTTP/1.1, (http/1.1)}{127.0.0.1:52158}
+2021-05-13 21:57:50,293 [Start Help Server] INFO  org.eclipse.jetty.server.Server - Started @5328391ms
+2021-05-13 21:57:50,293 [Start Help Server] INFO  org.eclipse.jetty.server.session - node0 Scavenging every 600000ms
+2021-05-13 21:58:01,503 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-13 21:58:01,503 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-05-13 21:58:01,513 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-13 21:58:01,565 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-13 21:58:01,570 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-13 21:58:01,570 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-05-13 21:58:01,570 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\bur56\cash_back\cash\src\test\resources
+2021-05-13 21:59:28,502 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-05-13 21:59:28,504 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-05-13 21:59:28,506 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
