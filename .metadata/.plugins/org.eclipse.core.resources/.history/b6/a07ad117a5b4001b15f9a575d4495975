@@ -3,15 +3,6 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.cash.mapper.GuestBookMapper">
-	<select id="selectGuestBook" resultType="com.example.cash.vo.GuestBook">
-		select 
-			guestbook_no guestbookNo,
-			guestbook_title guestbookTitle,
-			user_id userId,
-			guestbook_content guestbookContent,
-			create_date createDate
-		from cash.guestbook
-	</select>
 	<update id="updateGuestBook" parameterType="com.example.cash.vo.GuestBook">
 		update cash.guestbook
 		set guestbook_title = #{guestbookTitle}, guestbook_content = #{guestbookContent}, last_update = NOW()

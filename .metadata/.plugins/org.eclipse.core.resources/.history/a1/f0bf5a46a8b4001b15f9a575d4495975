@@ -1,7 +1,5 @@
 package com.example.cash.restcontroller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,11 +16,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class GuestBookRestController {
 	@Autowired GuestBookService guestBookService;
-	
-	@GetMapping("/user/getGuestBook")
-	public List<GuestBook> getGuestBook(){
-		return guestBookService.getGuestBook();
-	}
 	
 	@PostMapping("/user/modifyGuestBook")
 	public String modifyGuestBook(GuestBook guestBook) {
